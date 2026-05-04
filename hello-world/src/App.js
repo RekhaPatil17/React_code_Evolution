@@ -32,13 +32,27 @@ import ClickCounter from './components/ClickCounter';
 import HoverCounter from './components/HoverCounter';
 import ClickCounterTwo from './components/ClickCounterTwo';
 import HoverCounterTwo from './components/HoverCounterTwo';
-
+import User from './components/User';
+import Counter1 from './components/Counter1';
 function App() {
   return (
     <div className="App">
 
-      <ClickCounterTwo />
+      <Counter1 >
+      {(count, incrementCount)=>(
+      <ClickCounterTwo count={count} incrementCount={incrementCount}   />
+      )}
+      </Counter1>
+      <Counter1 >
+      {(count, incrementCount)=>(
+        <HoverCounterTwo count={count} incrementCount={incrementCount}   />
+        )}
+        </Counter1>
+
+
+      {/* <ClickCounterTwo />
       <HoverCounterTwo />
+      <User render= {(isLoggedIn)=>isLoggedIn?'Rekha':'Guest'} /> */}
 
       {/* <ClickCounter name='Rekha' />
       <HoverCounter /> */}
